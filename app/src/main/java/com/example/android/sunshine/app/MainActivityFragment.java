@@ -18,9 +18,9 @@ public class MainActivityFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
         String[] data = {
                 "Today - Sunny - 88/63",
                 "Tomorrow - Foggy - 70/36",
@@ -36,13 +36,12 @@ public class MainActivityFragment extends Fragment {
                 "Weds - Foggy - 73/47",
                 "Thurs - Foggy - 74/55",
                 };
-        ArrayAdapter<String> forecastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast,
-                R.id.list_item_forecast_textview, data);
-        if (getActivity().findViewById(R.id.listview_forecast) != null){
 
-            ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
-            listView.setAdapter(forecastAdapter);
-        };
+        ArrayAdapter<String> forecastAdapter =new ArrayAdapter<String>(
+                getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, data);
+
+        ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
+        listView.setAdapter(forecastAdapter);
 
         return rootView;
     }
