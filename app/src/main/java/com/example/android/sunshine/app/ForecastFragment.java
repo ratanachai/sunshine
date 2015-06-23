@@ -20,9 +20,9 @@ import java.net.URL;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class ForecastFragment extends Fragment {
 
-    public MainActivityFragment() {
+    public ForecastFragment() {
     }
 
     @Override
