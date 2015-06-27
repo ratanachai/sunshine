@@ -44,6 +44,8 @@ public class ForecastFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_refresh){
+            FetchWeatherTask weatherTask = new FetchWeatherTask();
+            weatherTask.execute();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -54,19 +56,9 @@ public class ForecastFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         String[] data = {
-                "Today - Sunny - 88/63",
-                "Tomorrow - Foggy - 70/36",
-                "Weds - Foggy - 73/47",
-                "Thurs - Foggy - 74/55",
-                "Fri - Foggy - 72/32",
-                "Sat - Foggy - 71/48",
-                "Sun - Foggy - 70/67",
-                "Tomorrow - Foggy - 70/36",
-                "Weds - Foggy - 73/47",
-                "Thurs - Foggy - 74/55",
-                "Tomorrow - Foggy - 70/36",
-                "Weds - Foggy - 73/47",
-                "Thurs - Foggy - 74/55",
+                "Today - Sunny - 88/63", "Tomorrow - Foggy - 70/36", "Weds - Foggy - 73/47",
+                "Thurs - Foggy - 74/55", "Fri - Foggy - 72/32", "Sat - Foggy - 71/48",
+                "Sun - Foggy - 70/67", "Tomorrow - Foggy - 70/36", "Weds - Foggy - 73/47",
                 };
 
         ArrayAdapter<String> forecastAdapter =new ArrayAdapter<String>(
