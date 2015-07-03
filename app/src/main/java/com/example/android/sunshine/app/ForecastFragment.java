@@ -77,7 +77,6 @@ public class ForecastFragment extends Fragment {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
             FetchWeatherTask weatherTask = new FetchWeatherTask();
-            Log.d("tmp","test");
             weatherTask.execute("94043");
             return true;
         }
@@ -142,7 +141,7 @@ public class ForecastFragment extends Fragment {
         }
 
         /**
-         * Prepare the weather high/lows for presentation.q
+         * Prepare the weather high/lows for presentation.
          */
         private String formatHighLows(double high, double low) {
             // For presentation, assume the user doesn't care about tenths of a degree.
@@ -323,7 +322,6 @@ public class ForecastFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String[] result) {
-            Log.d("Keng", result.toString());
             if (result != null) {
                 mForecastAdapter.clear();
                 for(String dayForecastStr : result) {
